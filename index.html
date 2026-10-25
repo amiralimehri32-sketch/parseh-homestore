@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوازم خانگی پارسه</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f6f7f4;color:#222}
+header{background:#145c3b;color:white;padding:22px 16px;text-align:center}
+header h1{margin:0 0 10px;font-size:27px}
+header p{margin:0;color:#e7d9a5}
+nav{background:#fff;padding:14px;text-align:center;border-bottom:1px solid #ddd}
+nav a{color:#145c3b;text-decoration:none;margin:0 9px;font-size:14px}
+.hero{margin:16px;padding:28px 18px;border-radius:18px;background:linear-gradient(135deg,#145c3b,#238657);color:white;text-align:center}
+.hero h2{font-size:24px}
+.hero p{line-height:2}
+.search{display:block;width:calc(100% - 32px);margin:18px 16px;padding:14px;border:1px solid #ddd;border-radius:12px;font-size:15px}
+h2.section{padding:0 16px;color:#145c3b}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:12px}
+.product{background:white;border-radius:14px;padding:15px;text-align:center;box-shadow:0 2px 8px #0000000b}
+.product .emoji{font-size:48px;background:#f3f5ef;border-radius:12px;padding:15px}
+.product h3{font-size:15px;line-height:1.8}
+.price{color:#145c3b;font-weight:bold}
+button,.order{background:#176c45;color:white;border:0;border-radius:9px;padding:11px;cursor:pointer;text-decoration:none;display:inline-block;margin-top:8px;font-family:inherit}
+.info{margin:16px;background:white;padding:18px;border-radius:14px;line-height:2}
+footer{background:#123e2b;color:white;text-align:center;padding:22px;line-height:2}
+@media(min-width:700px){.products{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{padding:45px}}
+</style>
+</head>
+<body>
+<header>
+<h1>لوازم خانگی پارسه</h1>
+<p>انتخابی مطمئن برای خانه شما ✨</p>
+</header>
+<nav>
+<a href="#home">صفحه اصلی</a>
+<a href="#products">محصولات</a>
+<a href="#contact">تماس با ما</a>
+</nav>
+<section class="hero" id="home">
+<h2>به فروشگاه پارسه خوش آمدید</h2>
+<p>محصولات کاربردی خانه را با خیال راحت بررسی کنید.<br>برای اطلاع از قیمت و ثبت سفارش با ما در ارتباط باشید.</p>
+<a class="order" href="#contact">مشاهده راه‌های سفارش</a>
+</section>
+<input class="search" id="search" placeholder="🔎 جست‌وجوی محصولات..." oninput="filterProducts()">
+<h2 class="section" id="products">محصولات فروشگاه</h2>
+<div class="products" id="productList">
+<div class="product"><div class="emoji">☕</div><h3>اسپرسوساز</h3><p>برای تهیه قهوه در خانه</p><p class="price">استعلام قیمت</p><button onclick="ask('اسپرسوساز')">سفارش محصول</button></div>
+<div class="product"><div class="emoji">🍚</div><h3>پلوپز و زودپز</h3><p>همراه کاربردی آشپزخانه</p><p class="price">استعلام قیمت</p><button onclick="ask('پلوپز و زودپز')">سفارش محصول</button></div>
+<div class="product"><div class="emoji">🥤</div><h3>آبمیوه‌گیری و مخلوط‌کن</h3><p>برای نوشیدنی‌های تازه</p><p class="price">استعلام قیمت</p><button onclick="ask('آبمیوه‌گیری و مخلوط‌کن')">سفارش محصول</button></div>
+<div class="product"><div class="emoji">🧹</div><h3>لوازم نظافت</h3><p>برای نظافت آسان خانه</p><p class="price">استعلام قیمت</p><button onclick="ask('لوازم نظافت')">سفارش محصول</button></div>
+</div>
+<section class="info" id="contact">
+<h2>ثبت سفارش و تماس</h2>
+<p>برای استعلام قیمت، موجودی و ثبت سفارش با فروشگاه پارسه تماس بگیرید.</p>
+<p>💳 روش‌های پرداخت: آنلاین یا کارت‌به‌کارت، پس از هماهنگی با فروشگاه.</p>
+<p>📱 شماره تماس فروشگاه را برای فعال‌شدن سفارش‌ها در کد سایت تنظیم کنید.</p>
+</section>
+<footer>لوازم خانگی پارسه 💚<br>کیفیت و آسایش برای خانه شما</footer>
+<script>
+function filterProducts(){
+const q=document.getElementById('search').value.trim().toLowerCase();
+document.querySelectorAll('.product').forEach(p=>{
+p.style.display=p.innerText.toLowerCase().includes(q)?'block':'none';
+});
+}
+function ask(product){
+alert('برای سفارش '+product+' لطفاً از بخش تماس با فروشگاه هماهنگ کنید.');
+}
+</script>
+</body>
+</html>
+  
